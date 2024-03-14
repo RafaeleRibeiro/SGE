@@ -40,38 +40,45 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoOcorrencia.TipoOcorrenciaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.UsuarioId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataOcorrencia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadAtivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadInativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Finalizado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFinalizado)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.OcorrenciaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.OcorrenciaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.OcorrenciaId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoOcorrencia.TipoOcorrenciaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.UsuarioId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataOcorrencia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadAtivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadInativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Finalizado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFinalizado)
+                </td>
+                <td>
+                    <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.OcorrenciaId">
+                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.OcorrenciaId">
+                        <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.OcorrenciaId">
+                        <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

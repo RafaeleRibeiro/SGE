@@ -4,46 +4,33 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Tipos de Ocorrência</h1>
+<h1>TIPOS DE OCORRÊNCIA</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
+
+    </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TipoOcorrenciaNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CadAtivo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CadInativo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TipoOcorrenciaNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadAtivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadInativo)
-            </td>
-            <td>
-                <a class="text-decoration-none text-secondary" asp-action="Edit" asp-route-id="@item.TipoOcorrenciaId">
-                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
-                </a> 
-                <a asp-action="Details" asp-route-id="@item.TipoOcorrenciaId">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.TipoOcorrenciaId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="row gap-3 justify-content-center">
+    @foreach (var item in Model)
+    {
+        {
+            <div class="col-12 col-md-3 text-center">
+                <div class="border border-1 rounded-1 text-center p-5">
+                    @Html.DisplayFor(modelItem => item.TipoOcorrenciaNome)
+                </div>
+                <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.TipoOcorrenciaId">
+                    <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                </a>
+                <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.TipoOcorrenciaId">
+                    <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+                </a>
+                <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.TipoOcorrenciaId">
+                    <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+                </a>
+            </div>
+
+        }
+    }
+</div>
