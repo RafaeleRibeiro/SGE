@@ -20,3 +20,64 @@ html {
 body {
     margin-bottom: 60px;
 }
+
+footer {
+    background: #364F6B;
+}
+
+    footer .container {
+        color: white;
+    }
+
+        footer .container a {
+            color: white;
+        }
+
+.bg-white {
+    background: #3fc1c9 !important
+}
+
+nav .text-dark {
+    color: white !important;
+}
+
+.navbar-brand {
+    color: white
+}
+
+main .card {
+    border-radius: 70px;
+    background: #59B4C3;
+    color: white
+}
+
+.card-header {
+    text-align: center !important;
+    background: rgba(0,0,0,0);
+    border: none !important;
+}
+
+.card-body form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group .btn-primary {
+    background: #f5f5f5 !important;
+    color: black;
+    border-radius: 20px
+}
+
+.table {
+    text-align: center;
+}
+
+main {
+    text-align: center;
+}
+
+/*    main .pb-3 {
+        gap: 10px !important;
+    }*/
