@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Tipos de Usuário</h1>
+<h1>TIPOS DE USUÁRIO</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
@@ -12,27 +12,24 @@
 
     </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Tipo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
+
+<div class="row gap-3 justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="col-12 col-md-3 text-center">
+            <div class="border border-1 rounded-1 text-center p-5">
                 @Html.DisplayFor(modelItem => item.Tipo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TipoUsuarioId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TipoUsuarioId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TipoUsuarioId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            </div>
+            <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.TipoUsuarioId">
+                <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+            </a>
+            <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.TipoUsuarioId">
+                <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+            </a>
+            <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.TipoUsuarioId">
+                <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+            </a>
+        </div>
+
+    }
+</div>
