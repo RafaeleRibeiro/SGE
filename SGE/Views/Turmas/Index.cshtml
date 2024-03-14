@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Turmas</h1>
+<h1>TURMAS</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
@@ -43,38 +43,45 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TurmaNome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Turno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Serie)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadAtivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadInativo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TurmaEncerrada)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TurmaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TurmaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TurmaId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TurmaNome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Turno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Serie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadAtivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadInativo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TurmaEncerrada)
+                </td>
+                <td>
+                    <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.TurmaId">
+                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.TurmaId">
+                        <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.TurmaId">
+                        <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+                    </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
