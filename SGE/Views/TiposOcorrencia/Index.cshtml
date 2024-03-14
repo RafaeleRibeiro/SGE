@@ -37,8 +37,10 @@
                 @Html.DisplayFor(modelItem => item.CadInativo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TipoOcorrenciaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TipoOcorrenciaId">Details</a> |
+                <a class="text-decoration-none text-secondary" asp-action="Edit" asp-route-id="@item.TipoOcorrenciaId">
+                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                </a> 
+                <a asp-action="Details" asp-route-id="@item.TipoOcorrenciaId">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.TipoOcorrenciaId">Delete</a>
             </td>
         </tr>
