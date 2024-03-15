@@ -4,10 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>SALAS</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
+
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -38,9 +41,15 @@
                     @Html.DisplayFor(modelItem => item.CadInativo)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.SalaId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.SalaId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.SalaId">Delete</a>
+                    <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.SalaId">
+                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.SalaId">
+                        <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.SalaId">
+                        <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+                    </a>
                 </td>
             </tr>
         }

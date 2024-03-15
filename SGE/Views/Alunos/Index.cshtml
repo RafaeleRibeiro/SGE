@@ -12,7 +12,7 @@
 
 }
 
-<h1>Alunos Geral</h1>
+<h1>ALUNOS</h1>
 
 <p>
     <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
@@ -33,16 +33,10 @@
                 @Html.DisplayNameFor(model => model.Matricula)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Celular)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DataNascimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CadAtivo)
             </th>
             <th></th>
         </tr>
@@ -75,21 +69,21 @@
                     @Html.DisplayFor(modelItem => item.Matricula)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Celular)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DataNascimento)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CadAtivo)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.AlunoId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.AlunoId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.AlunoId">Delete</a>
+                    <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.AlunoId">
+                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.AlunoId">
+                        <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+                    </a>
+                    <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.AlunoId">
+                        <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+                    </a>
                 </td>
             </tr>
         }

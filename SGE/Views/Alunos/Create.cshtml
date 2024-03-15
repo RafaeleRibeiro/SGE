@@ -5,10 +5,10 @@
     Guid TipoUser = (Guid)@ViewData["TipoUsuarioId"];
 }
 
-<h1>Create</h1>
+<h1>CRIAR</h1>
 
 
-<h4>Aluno</h4>
+<h4>ALUNOS</h4>
 <hr />
 @if (ViewData["Erro"] != null)
 {
@@ -45,11 +45,6 @@
                 <label asp-for="Celular" class="control-label"></label>
                 <input asp-for="Celular" class="form-control" />
                 <span asp-validation-for="Celular" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Logradouro" class="control-label"></label>
-                <input asp-for="Logradouro" class="form-control" />
-                <span asp-validation-for="Logradouro" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Numero" class="control-label"></label>
@@ -104,14 +99,14 @@
                 <span asp-validation-for="UrlFoto" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="CRIAR" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">VOLTAR</a>
 </div>
 
 @section Scripts {
