@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /SGE/Properties/launchSettings.json
 /SGE/appsettings.Development.json
+/SGE/Properties/launchSettings.json
+/.gitignore

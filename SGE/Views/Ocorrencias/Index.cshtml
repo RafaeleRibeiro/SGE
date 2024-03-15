@@ -4,10 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Ocorrências</h1>
+<h1>OCORRÊNCIAS</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
+
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -25,16 +28,7 @@
                 @Html.DisplayNameFor(model => model.Descricao)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CadAtivo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CadInativo)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Finalizado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataFinalizado)
             </th>
             <th></th>
         </tr>
@@ -56,16 +50,7 @@
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.CadAtivo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CadInativo)
-                </td>
-                <td>
                     @Html.DisplayFor(modelItem => item.Finalizado)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataFinalizado)
                 </td>
                 <td>
                     <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.OcorrenciaId">
