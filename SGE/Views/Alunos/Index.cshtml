@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<SGE.Models.Aluno>
 
 @{
-    ViewData["Title"] = "Index";
-    if (Context.Session.GetString("email") != null)
-    {
-        var sessionEmail = Context.Session.GetString("email");
-        var sessionNome = Context.Session.GetString("usuario");
-        var sessionTipoUsuarioId = Context.Session.GetString("tipo");
-    }
+	ViewData["Title"] = "Index";
+	if (Context.Session.GetString("email") != null)
+	{
+		var sessionEmail = Context.Session.GetString("email");
+		var sessionNome = Context.Session.GetString("usuario");
+		var sessionTipoUsuarioId = Context.Session.GetString("tipo");
+	}
 
 
 }
@@ -15,89 +15,89 @@
 <h1>ALUNOS</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
-        <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
+	<a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+		<svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
 
-    </a>
+	</a>
 </p>
 <table class="table table-bordered table-light table-striped tablet-hover" style="border-collapse: separate; border-spacing:0 10px">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.UrlFoto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AlunoNome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Matricula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Celular)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataNascimento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CadAtivo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @{
-                        // Verifica se a imagem existe
-                        var filePath = Directory.GetCurrentDirectory() + "\\Data\\Content\\Photo\\" +
-                        item.UrlFoto;
-                        if (System.IO.File.Exists(filePath))
-                        {
-                            // Carrega a imagem em memória
-                            var imageBytes = await System.IO.File.ReadAllBytesAsync(filePath);
-                            var imageBase64 = Convert.ToBase64String(imageBytes);
+	<thead>
+		<tr class=" barraTopo">
+			<th>
+				@Html.DisplayNameFor(model => model.UrlFoto)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.AlunoNome)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Matricula)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Email)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Celular)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DataNascimento)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.CadAtivo)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr class="barraTopo">
+				<td>
+					@{
+						// Verifica se a imagem existe
+						var filePath = Directory.GetCurrentDirectory() + "\\Data\\Content\\Photo\\" +
+						item.UrlFoto;
+						if (System.IO.File.Exists(filePath))
+						{
+							// Carrega a imagem em memória
+							var imageBytes = await System.IO.File.ReadAllBytesAsync(filePath);
+							var imageBase64 = Convert.ToBase64String(imageBytes);
 
-                            // Exibe a imagem na view
-                            <img src="data:image/png;base64,@imageBase64"
-                                 alt="Foto do Perfil" height="50" />
-                        }
-                    }
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AlunoNome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Matricula)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Celular)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DataNascimento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CadAtivo)
-                </td>
-                <td>
-                    <a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.AlunoId">
-                        <svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
-                    </a>
-                    <a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.AlunoId">
-                        <svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
-                    </a>
-                    <a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.AlunoId">
-                        <svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
-                    </a>
-                </td>
-            </tr>
-        }
-    </tbody>
+							// Exibe a imagem na view
+							<img src="data:image/png;base64,@imageBase64"
+								 alt="Foto do Perfil" height="50" />
+						}
+					}
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.AlunoNome)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Matricula)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Email)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Celular)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DataNascimento)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.CadAtivo)
+				</td>
+				<td>
+					<a class="text-decoration-none text-dark" asp-action="Edit" asp-route-id="@item.AlunoId">
+						<svg class="me-2" bootstrap-icon="PencilFill" width="16" height="16" arial-label="Editar"></svg>
+					</a>
+					<a class="text-decoration-none text-dark" asp-action="Details" asp-route-id="@item.AlunoId">
+						<svg class="me-2" bootstrap-icon="InfoLg" width="16" height="16" arial-label="Detalhes"></svg>
+					</a>
+					<a class="text-decoration-none text-dark" asp-action="Delete" asp-route-id="@item.AlunoId">
+						<svg class="me-2" bootstrap-icon="Trash" width="16" height="16" arial-label="Excluir"></svg>
+					</a>
+				</td>
+			</tr>
+		}
+	</tbody>
 </table>

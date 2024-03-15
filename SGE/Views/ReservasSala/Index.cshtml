@@ -4,10 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>RESERVA DE SALAS</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-lg btn-outline-dark d-inline-flex align-items-center">
+        <svg class="me-3" bootstrap-icon="PlusLg" width="20" height="20" aria-label="Adicionar"></svg>Adicionar
+
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -37,35 +40,36 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sala.SalaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.UsuarioId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataReserva)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoraInicio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoraFim)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadAtivo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CadInativo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ReservaSalaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReservaSalaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReservaSalaId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sala.SalaId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario.UsuarioId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataReserva)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HoraFim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadAtivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CadInativo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ReservaSalaId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ReservaSalaId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ReservaSalaId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
