@@ -5,7 +5,7 @@
     Guid TipoUser = (Guid)@ViewData["TipoUsuarioId"];
 }
 
-<h1>Create</h1>
+<h1>ADICIONAR</h1>
 
 
 <h4>Aluno</h4>
@@ -111,7 +111,9 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">
+        <input type="submit" value="VOLTAR" class="btn btn-success" />
+    </a>
 </div>
 
 @section Scripts {
